@@ -1,10 +1,11 @@
 import items
 
 class shopping_cart:
-    shopping_list = {}
+    def __init__(self):
+        self.shopping_list = {}
 
     def __str__(self):
-        return f"{shopping_cart.shopping_list}"
+        return f"{self.shopping_list}"
 
     def add_item(self, purchase_item):
         if purchase_item.name in self.shopping_list:
@@ -41,6 +42,9 @@ class shopping_cart:
 item1 = items.buy_item('Cookies', 10, 'standard')
 item2 = items.buy_item('Bananas', 5, 'exempt')
 item3 = items.buy_item('Spaghetti', 5, 'imported')
+
+new_cart = shopping_cart()
+print(new_cart)
 
 # Testing that add function is working as intended
 my_cart = shopping_cart()
